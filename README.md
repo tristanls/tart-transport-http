@@ -108,7 +108,7 @@ Message format:
 ```javascript
 var send = sponsor(transport.sendBeh);
 send({
-    address: 'tcp://localhost:7847/#ZkiLrAwGX7N1eeOXXMAeoVp7vsYJKeISjfT5fESfkRiZOIpkPx1bAS8y', 
+    address: 'http://localhost:7847/#ZkiLrAwGX7N1eeOXXMAeoVp7vsYJKeISjfT5fESfkRiZOIpkPx1bAS8y', 
     content: '{"some":{"json":"content"}}'
 });
 ```
@@ -154,7 +154,7 @@ listen({
     host: 'localhost',
     port: 7847,
     ok: sponsor(function listenAckBeh(message) {
-        console.log('transport listening on tcp://' + message.host + ':' + message.port);
+        console.log('transport listening on http://' + message.host + ':' + message.port);
     }),
     fail: sponsor(function failBeh(message) {
         console.error(message);
